@@ -1,6 +1,6 @@
 #!groovy
-properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3'))])
-
+/*properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3'))])
+*/
 node {
     stage('Checkout') { 
    git credentialsId: '1ece1b5e-48b3-417e-ba8a-c6dd3bbc286f', url: 'https://github.com/InduDevops/maven-web-application.git'
