@@ -2,12 +2,9 @@
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3'))])
 
 node {
-   /* 
     stage('Checkout') { 
-   git branch: 'master', credentialsId: '21311c83-a7a7-4316-8a19-b5b828aaf1a9', url: ' https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
-
+   git credentialsId: '1ece1b5e-48b3-417e-ba8a-c6dd3bbc286f', url: 'https://github.com/InduDevops/maven-web-application.git'
    }
- */
  
  stage('Checkout'){
 
@@ -23,7 +20,7 @@ node {
        bat 'mvn test'   
       }
    }
-   /*
+  
    stage('SonarQube Report Generation')
    {
     if(isUnix()){
@@ -43,7 +40,7 @@ node {
        bat 'mvn deploy'   
       }
    }
-   
+   /*
    stage ('Deploy to Tomcat'){
        
        sh 'echo deploying application into tomcat'
@@ -51,6 +48,7 @@ node {
        sh 'echo deploymnet done'
    }
    */
+   /*
    stage ('Email Notifcation'){
        
        mail bcc: '', body: '''Build done
@@ -58,5 +56,5 @@ node {
 Regards,
 Mithun Technologies''', cc: 'bhaskar0504@gmail.com', from: '', replyTo: '', subject: 'Deployment done', to: 'devopstrainingblr@gmail.com,satyaswarup.inbox@gmail.com'
    } 
-    
+    */
 }
